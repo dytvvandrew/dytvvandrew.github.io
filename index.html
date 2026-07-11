@@ -1,169 +1,162 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A clean academic project homepage template for a journal or research project."
-    />
-    <title>Project Title - Research Homepage</title>
+    <meta name="description" content="PRAXIS research project homepage." />
+    <title>PRAXIS - Description-Only Robot Control</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" id="top">
       <div class="nav-shell">
-        <a class="wordmark" href="#top" aria-label="Back to homepage">PROJECT<span>/</span>LAB</a>
+        <a class="wordmark" href="#top" aria-label="Back to homepage">PRAXIS<span>/</span>LAB</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span><span></span>
-          <span class="sr-only">Open navigation</span>
+          <span></span><span></span><span class="sr-only">Open navigation</span>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Page navigation">
-          <a href="#overview">Overview</a>
-          <a href="#method">Method</a>
+          <a href="#abstract">Abstract</a>
+          <a href="#demos">Demos</a>
+          <a href="#motivation">Motivation</a>
+          <a href="#framework">Framework</a>
           <a href="#results">Results</a>
-          <a href="#team">Team</a>
           <a href="#citation">Citation</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero section-shell">
-        <div class="eyebrow"><span></span> Research Project / 20XX</div>
-        <h1>
-          <span class="title-placeholder">Your Project Title</span>
-          <span class="title-accent">A concise subtitle can be placed here</span>
+      <section class="hero praxis-hero section-shell">
+        <div class="eyebrow"><span></span> Embodied Intelligence / Research Project</div>
+        <h1 class="praxis-title">
+          <span class="project-name">PRAXIS</span>
+          <span class="project-title">Bridging cognitive reasoning and kinematic execution with a physics-internalizing framework for description-only robot control</span>
         </h1>
-        <p class="hero-summary placeholder-copy">
-          Use this space for a one-sentence description of the project, paper, dataset, or journal issue.
-        </p>
 
-        <div class="authors" aria-label="Author list">
-          <a href="#">Author One<sup>1</sup></a>
-          <a href="#">Author Two<sup>1</sup></a>
-          <a href="#">Author Three<sup>2</sup></a>
-          <a href="#">Author Four<sup>1,2</sup></a>
+        <div class="authors praxis-authors" aria-label="Author list">
+          <a href="#">Yunpeng Wang</a>
+          <a href="#">Yicao Cao</a>
+          <a href="#">Zongzhe Wu</a>
+          <a href="#">Hongyan Xu</a>
+          <a href="#">Xiu Su<sup>*</sup></a>
         </div>
-        <p class="affiliations"><sup>1</sup> Institution One &nbsp;&nbsp; <sup>2</sup> Institution Two</p>
+        <p class="affiliations">Affiliation details forthcoming &nbsp; / &nbsp; <sup>*</sup> Corresponding author</p>
 
         <div class="resource-links" aria-label="Project resources">
-          <a class="resource-button" href="#" aria-label="Paper placeholder">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 3v5h5M9 12h8M9 16h8"/></svg>
-            Paper
+          <a class="resource-button" href="#" aria-label="Paper link placeholder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 3v5h5M9 12h8M9 16h8"/></svg>Paper
           </a>
-          <a class="resource-button" href="#" aria-label="Code placeholder">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
-            Code
+          <a class="resource-button" href="#" aria-label="Code link placeholder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>Code
           </a>
-          <a class="resource-button" href="#" aria-label="Data placeholder">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
-            Data
-          </a>
-          <a class="resource-button" href="#" aria-label="Demo placeholder">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>
-            Demo
+          <a class="resource-button" href="#citation" aria-label="Jump to BibTeX citation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>BibTeX
           </a>
         </div>
       </section>
 
-      <section class="feature-media section-shell" aria-label="Hero media placeholder">
-        <div class="media-frame media-frame--hero">
-          <div class="media-placeholder">
-            <span class="play-mark" aria-hidden="true"></span>
-            <strong>Hero Video / Image</strong>
-            <small>16:9 media placeholder</small>
-          </div>
-        </div>
-        <p class="caption">Place the main project video, teaser image, or graphical abstract here.</p>
-      </section>
-
-      <section class="content-section section-shell" id="overview">
+      <section class="content-section section-shell abstract-section" id="abstract">
         <div class="section-index">01</div>
         <div class="section-content">
-          <p class="section-kicker">Introducing the project</p>
-          <h2>Overview</h2>
-          <div class="lead-grid">
-            <p class="lead">Add a short, high-level introduction that explains the central idea and why it matters.</p>
-            <div class="copy-stack" aria-label="Body copy placeholder">
-              <span class="skeleton-line"></span><span class="skeleton-line"></span>
-              <span class="skeleton-line short"></span><span class="skeleton-line"></span>
-              <span class="skeleton-line medium"></span>
-            </div>
-          </div>
-          <div class="metric-grid">
-            <article><strong>00+</strong><span>Metric label</span></article>
-            <article><strong>00x</strong><span>Metric label</span></article>
-            <article><strong>00%</strong><span>Metric label</span></article>
-            <article><strong>00k</strong><span>Metric label</span></article>
+          <p class="section-kicker">Paper summary</p>
+          <h2>Abstract</h2>
+          <div class="abstract-layout">
+            <p class="abstract-body">
+              Universal vision-language-action models are driving embodied intelligence toward multi-platform unification. However, existing strategies predominantly learn cognitive intents rather than physical execution boundaries, leaving robots highly vulnerable to kinematic violations and task crashes during morphological shifts. Here we report a physics-internalizing foundation framework that decodes physical schemas into executable constraints for zero-shot robot control. To achieve this, we developed EmbodiAtlas-110K, a configuration engine providing 110,602 parsable, composable, and perturbable body-action environments. By learning how physical structures dictate motion boundaries within this engine, the framework dynamically routes task intentions to feasible kinematic chains. This enables unseen robots to be controlled solely via standard description files without target demonstrations. Evaluated within StarVLA, our method increased zero-shot success in a 6-to-7 degree-of-freedom transfer from 8.1% to 44.8% against structure-free baselines, and tripled performance across 36 unseen arm-gripper combinations. Furthermore, the optimal configuration achieved an 81.5% success rate on LIBERO-Plus, substantially outperforming state-of-the-art models including <span class="math">&pi;<sub>0.5</sub></span> and ACoT-VLA. These results indicate that internalizing physical descriptions into kinematic constraints is highly effective for zero-shot adaptation under severe structural shifts, providing a practical, target-data-free deployment solution for heterogeneous and reconfigurable robots.
+            </p>
+            <aside class="abstract-highlights" aria-label="Key results">
+              <article><strong>110,602</strong><span>Body-action environments</span></article>
+              <article><strong>8.1% <i>to</i> 44.8%</strong><span>Zero-shot transfer success</span></article>
+              <article><strong>81.5%</strong><span>LIBERO-Plus success rate</span></article>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section class="content-section section-shell" id="method">
+      <section class="content-section section-shell" id="demos">
         <div class="section-index">02</div>
         <div class="section-content">
-          <p class="section-kicker">How it works</p>
-          <h2>Method</h2>
-          <p class="section-intro">Use this section for a method overview, system diagram, or research workflow.</p>
-          <div class="media-frame media-frame--diagram">
-            <div class="diagram-placeholder">
-              <div><span>Input</span></div><i></i><div><span>Module</span></div><i></i><div><span>Output</span></div>
+          <p class="section-kicker">Description-only control</p>
+          <h2>Demos</h2>
+          <p class="section-intro">Demonstrations will be presented here across heterogeneous robot embodiments and task settings.</p>
+          <div class="demo-grid">
+            <article class="demo-card demo-card--featured">
+              <div class="demo-placeholder"><span class="play-mark" aria-hidden="true"></span><strong>Featured demo</strong><small>Video placeholder / 16:9</small></div>
+              <div class="demo-meta"><span>Demo 01</span><p>Description-only transfer across embodiments</p></div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-placeholder"><span class="play-mark play-mark--small" aria-hidden="true"></span><strong>Demo video</strong></div>
+              <div class="demo-meta"><span>Demo 02</span><p>Robot and task placeholder</p></div>
+            </article>
+            <article class="demo-card">
+              <div class="demo-placeholder"><span class="play-mark play-mark--small" aria-hidden="true"></span><strong>Demo video</strong></div>
+              <div class="demo-meta"><span>Demo 03</span><p>Robot and task placeholder</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section section-shell" id="motivation">
+        <div class="section-index">03</div>
+        <div class="section-content">
+          <p class="section-kicker">Why PRAXIS</p>
+          <h2>Motivation</h2>
+          <p class="section-intro">Place the paper's motivation figure and its final caption in this section.</p>
+          <figure class="paper-figure">
+            <div class="figure-placeholder">
+              <span>Motivation figure</span>
+              <small>High-resolution image placeholder</small>
             </div>
-          </div>
-          <div class="stage-grid">
-            <article><span>Stage 01</span><h3>First component</h3><p>Brief placeholder for the first step or contribution.</p></article>
-            <article><span>Stage 02</span><h3>Second component</h3><p>Brief placeholder for the second step or contribution.</p></article>
-            <article><span>Stage 03</span><h3>Third component</h3><p>Brief placeholder for the final step or contribution.</p></article>
-          </div>
+            <figcaption><b>Figure 1.</b> Motivation figure caption placeholder.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="content-section section-shell" id="framework">
+        <div class="section-index">04</div>
+        <div class="section-content">
+          <p class="section-kicker">Physics-internalizing architecture</p>
+          <h2>Framework</h2>
+          <p class="section-intro">The complete PRAXIS framework diagram will be placed here at publication resolution.</p>
+          <figure class="paper-figure paper-figure--framework">
+            <div class="framework-placeholder">
+              <div><span>Embodiment<br />description</span></div><i></i>
+              <div><span>Physical schema<br />internalization</span></div><i></i>
+              <div><span>Feasible kinematic<br />execution</span></div>
+            </div>
+            <figcaption><b>Figure 2.</b> PRAXIS framework overview placeholder.</figcaption>
+          </figure>
         </div>
       </section>
 
       <section class="content-section section-shell" id="results">
-        <div class="section-index">03</div>
+        <div class="section-index">05</div>
         <div class="section-content">
-          <p class="section-kicker">Experiments and findings</p>
-          <h2>Results</h2>
-          <p class="section-intro">Present headline results, qualitative examples, comparisons, or selected figures.</p>
-          <div class="result-grid">
-            <article class="result-card result-card--wide"><div class="visual-placeholder"><span>Result 01</span></div><h3>Result title</h3><p>Short result caption placeholder.</p></article>
-            <article class="result-card"><div class="visual-placeholder"><span>Result 02</span></div><h3>Result title</h3><p>Short result caption placeholder.</p></article>
-            <article class="result-card"><div class="visual-placeholder"><span>Result 03</span></div><h3>Result title</h3><p>Short result caption placeholder.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="content-section section-shell" id="team">
-        <div class="section-index">04</div>
-        <div class="section-content">
-          <p class="section-kicker">People behind the work</p>
-          <h2>Team</h2>
-          <div class="team-grid">
-            <article><div class="avatar-placeholder">A</div><h3>Author Name</h3><p>Role / Institution</p></article>
-            <article><div class="avatar-placeholder">A</div><h3>Author Name</h3><p>Role / Institution</p></article>
-            <article><div class="avatar-placeholder">A</div><h3>Author Name</h3><p>Role / Institution</p></article>
-            <article><div class="avatar-placeholder">A</div><h3>Author Name</h3><p>Role / Institution</p></article>
+          <p class="section-kicker">Evaluation</p>
+          <h2>Experimental Results</h2>
+          <p class="section-intro">Key quantitative and qualitative comparisons can be inserted into the cards below.</p>
+          <div class="result-grid praxis-results">
+            <article class="result-card result-card--wide"><div class="visual-placeholder"><span>Main result figure</span></div><h3>Cross-embodiment transfer</h3><p>Primary comparison figure and caption placeholder.</p></article>
+            <article class="result-card"><div class="result-stat"><strong>44.8%</strong><span>Zero-shot success</span></div><h3>6-to-7 DoF transfer</h3><p>Compared with 8.1% for structure-free baselines.</p></article>
+            <article class="result-card"><div class="result-stat"><strong>81.5%</strong><span>LIBERO-Plus</span></div><h3>Optimal configuration</h3><p>Success rate on the LIBERO-Plus benchmark.</p></article>
           </div>
         </div>
       </section>
 
       <section class="content-section section-shell" id="citation">
-        <div class="section-index">05</div>
+        <div class="section-index">06</div>
         <div class="section-content">
           <p class="section-kicker">Reference</p>
           <h2>Citation</h2>
           <div class="citation-block">
             <button class="copy-button" type="button" data-copy-target="citation-code">Copy</button>
-            <pre id="citation-code"><code>@article{your-project-20xx,
-  title   = {Your Project Title},
-  author  = {Author One and Author Two and Others},
-  journal = {Journal or Conference},
+            <pre id="citation-code"><code>@article{wang20xxpraxis,
+  title   = {PRAXIS: Bridging Cognitive Reasoning and Kinematic Execution
+             with a Physics-Internalizing Framework for Description-Only Robot Control},
+  author  = {Wang, Yunpeng and Cao, Yicao and Wu, Zongzhe and Xu, Hongyan and Su, Xiu},
   year    = {20XX}
 }</code></pre>
           </div>
@@ -173,12 +166,11 @@
 
     <footer>
       <div class="section-shell footer-inner">
-        <a class="wordmark wordmark--footer" href="#top">PROJECT<span>/</span>LAB</a>
-        <p>Academic project page template / <span id="year"></span></p>
+        <a class="wordmark wordmark--footer" href="#top">PRAXIS<span>/</span>LAB</a>
+        <p>Physics-aware robot intelligence / <span id="year"></span></p>
         <a href="#top">Back to top ^</a>
       </div>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
