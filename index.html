@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260713-5" />
+    <link rel="stylesheet" href="styles.css?v=20260713-6" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -77,25 +77,17 @@
         </figure>
 
         <figure class="paper-figure paper-figure--main" id="motivation">
-          <div class="figure-pdf-wrap">
-            <div class="pdf-canvas-stage" data-pdf-figure>
-              <canvas
-                class="paper-figure-canvas"
-                data-pdf-canvas
-                data-pdf-source="assets/figures/fig1.pdf?v=20260713-1"
-                aria-label="PRAXIS motivation figure rendered from the original PDF"
-              ></canvas>
-              <div class="pdf-render-status" role="status" aria-live="polite">
-                <span class="pdf-loader" aria-hidden="true"></span>
-                <p>Rendering the original PDF...</p>
-                <a href="assets/figures/fig1.pdf" target="_blank" rel="noopener">Open the original PDF</a>
-              </div>
-            </div>
+          <div class="figure-image-wrap">
+            <img
+              class="paper-figure-image"
+              src="assets/images/motivation.png?v=20260713-3"
+              width="3287"
+              height="2257"
+              decoding="async"
+              alt="Motivation figure showing the limitations of embodiment-blind policies, description-only zero-shot transfer performance, the EmbodiX paradigm, and generalization across graded embodiment shifts."
+            />
           </div>
-          <figcaption>
-            <span><b>Figure 1.</b> Motivation: moving from embodiment-blind policies toward description-only zero-shot transfer across graded embodiment shifts.</span>
-            <a class="figure-source-link" href="assets/figures/fig1.pdf" target="_blank" rel="noopener">Open original PDF</a>
-          </figcaption>
+          <figcaption><b>Figure 1.</b> Motivation: moving from embodiment-blind policies toward description-only zero-shot transfer across graded embodiment shifts.</figcaption>
         </figure>
       </section>
 
@@ -193,7 +185,7 @@
         <a href="#top">Back to top ^</a>
       </div>
     </footer>
-    <script src="script.js?v=20260713-2"></script>
+    <script src="script.js?v=20260713-3"></script>
   </body>
 </html>
 
