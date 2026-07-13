@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260713-2" />
+    <link rel="stylesheet" href="styles.css?v=20260713-3" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -18,9 +18,9 @@
           <span></span><span></span><span class="sr-only">Open navigation</span>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Page navigation">
+          <a href="#overview">Overview</a>
           <a href="#abstract">Abstract</a>
           <a href="#demos">Demos</a>
-          <a href="#motivation">Motivation</a>
           <a href="#framework">Framework</a>
           <a href="#results">Results</a>
           <a href="#citation">Citation</a>
@@ -56,6 +56,36 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>BibTeX
           </a>
         </div>
+      </section>
+
+      <section class="project-overview section-shell" id="overview" aria-label="Project overview">
+        <figure class="teaser-video-figure">
+          <div class="teaser-video-frame">
+            <video
+              class="teaser-video"
+              src="assets/video/hero-teaser.mp4"
+              aria-label="PRAXIS project video preview"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+            ></video>
+          </div>
+          <figcaption><b>Video preview.</b> PRAXIS description-only robot control demonstration.</figcaption>
+        </figure>
+
+        <figure class="paper-figure paper-figure--main" id="motivation">
+          <div class="figure-image-wrap">
+            <img
+              class="paper-figure-image"
+              src="assets/images/motivation.png"
+              alt="Three-panel motivation figure comparing existing approaches, the cross-embodiment challenge, and an explicit morphology-aware robot control paradigm."
+            />
+          </div>
+          <figcaption><b>Figure 1.</b> Motivation: moving from implicit morphology modeling toward explicit structural priors for feasible cross-embodiment deployment.</figcaption>
+        </figure>
       </section>
 
       <section class="content-section section-shell abstract-section" id="abstract">
@@ -96,28 +126,8 @@
         </div>
       </section>
 
-      <section class="content-section section-shell" id="motivation">
-        <div class="section-index">03</div>
-        <div class="section-content">
-          <p class="section-kicker">Why PRAXIS</p>
-          <h2>Motivation</h2>
-          <p class="section-intro">Cross-embodiment deployment requires models to reason about explicit morphology and physical feasibility rather than treating robot structure as an implicit nuisance.</p>
-          <figure class="paper-figure">
-            <div class="figure-image-wrap">
-              <img
-                class="paper-figure-image"
-                src="assets/images/motivation.png"
-                alt="Three-panel motivation figure comparing existing approaches, the cross-embodiment challenge, and an explicit morphology-aware robot control paradigm."
-                loading="lazy"
-              />
-            </div>
-            <figcaption><b>Figure 1.</b> Motivation: moving from implicit morphology modeling toward explicit structural priors for feasible cross-embodiment deployment.</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section class="content-section section-shell" id="framework">
-        <div class="section-index">04</div>
+        <div class="section-index">03</div>
         <div class="section-content">
           <p class="section-kicker">Physics-internalizing architecture</p>
           <h2>Framework</h2>
@@ -134,7 +144,7 @@
       </section>
 
       <section class="content-section section-shell" id="results">
-        <div class="section-index">05</div>
+        <div class="section-index">04</div>
         <div class="section-content">
           <p class="section-kicker">Evaluation</p>
           <h2>Experimental Results</h2>
@@ -148,7 +158,7 @@
       </section>
 
       <section class="content-section section-shell" id="citation">
-        <div class="section-index">06</div>
+        <div class="section-index">05</div>
         <div class="section-content">
           <p class="section-kicker">Reference</p>
           <h2>Citation</h2>
