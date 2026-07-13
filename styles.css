@@ -226,7 +226,7 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 .play-mark--small { width: 45px; height: 45px; margin-bottom: 13px; }
 .play-mark--small::after { margin: 14px 0 0 19px; border-width: 8px 0 8px 12px; }
 .demo-video-shell { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #101924; }
-.demo-video { width: 100%; height: 100%; display: block; object-fit: cover; background: #101924; }
+.demo-video { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 75%; background: #101924; }
 .demo-speed-badge { position: absolute; right: 10px; bottom: 10px; z-index: 2; padding: 5px 8px; color: #fff; background: rgba(10, 20, 31, .76); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; backdrop-filter: blur(8px); font-size: .62rem; font-weight: 800; letter-spacing: .04em; pointer-events: none; }
 .demo-meta { display: flex; gap: 18px; align-items: baseline; padding: 17px 18px 19px; }
 .demo-meta span { color: var(--accent); font-size: .66rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; }
