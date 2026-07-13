@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260713-4" />
+    <link rel="stylesheet" href="styles.css?v=20260713-5" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -78,17 +78,19 @@
 
         <figure class="paper-figure paper-figure--main" id="motivation">
           <div class="figure-pdf-wrap">
-            <object
-              class="paper-figure-pdf"
-              data="assets/figures/fig1.pdf?v=20260713-1#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0"
-              type="application/pdf"
-              aria-label="PRAXIS motivation figure PDF"
-            >
-              <div class="pdf-fallback">
-                <p>This browser cannot display the embedded PDF.</p>
+            <div class="pdf-canvas-stage" data-pdf-figure>
+              <canvas
+                class="paper-figure-canvas"
+                data-pdf-canvas
+                data-pdf-source="assets/figures/fig1.pdf?v=20260713-1"
+                aria-label="PRAXIS motivation figure rendered from the original PDF"
+              ></canvas>
+              <div class="pdf-render-status" role="status" aria-live="polite">
+                <span class="pdf-loader" aria-hidden="true"></span>
+                <p>Rendering the original PDF...</p>
                 <a href="assets/figures/fig1.pdf" target="_blank" rel="noopener">Open the original PDF</a>
               </div>
-            </object>
+            </div>
           </div>
           <figcaption>
             <span><b>Figure 1.</b> Motivation: moving from embodiment-blind policies toward description-only zero-shot transfer across graded embodiment shifts.</span>
@@ -191,7 +193,7 @@
         <a href="#top">Back to top ^</a>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js?v=20260713-2"></script>
   </body>
 </html>
 
