@@ -187,8 +187,9 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   font-weight: 500;
   letter-spacing: -.045em;
 }
-.praxis-authors { max-width: 900px; margin: 48px auto 0; gap: 10px 28px; font-size: 1rem; }
-.praxis-authors a { position: relative; }
+.praxis-authors { max-width: 900px; margin: 48px auto 0; align-items: baseline; gap: 10px 28px; font-size: 1rem; }
+.praxis-authors a { position: relative; display: inline-flex; align-items: baseline; }
+.praxis-authors sup { position: relative; top: -.45em; margin-left: 2px; font-size: .68em; line-height: 1; vertical-align: baseline; }
 .praxis-authors a:not(:last-child)::after { content: "/"; position: absolute; right: -18px; color: #b2bbc4; font-weight: 400; }
 
 .project-overview { padding-bottom: 88px; }
