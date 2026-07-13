@@ -29,3 +29,34 @@ document.querySelector('.copy-button')?.addEventListener('click', async (event) 
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const DEMO_PLAYBACK_RATE = 1.5;
+
+function configureDemoVideo(video) {
+  const applyRate = () => {
+    video.defaultPlaybackRate = DEMO_PLAYBACK_RATE;
+    video.playbackRate = DEMO_PLAYBACK_RATE;
+  };
+
+  applyRate();
+  video.addEventListener('loadedmetadata', applyRate);
+  video.addEventListener('play', applyRate);
+}
+
+const demoVideos = Array.from(document.querySelectorAll('.demo-video'));
+demoVideos.forEach(configureDemoVideo);
+
+if ('IntersectionObserver' in window && demoVideos.length) {
+  const demoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  demoVideos.forEach((video) => demoObserver.observe(video));
+}
+
