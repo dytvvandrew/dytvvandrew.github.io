@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260713-3" />
+    <link rel="stylesheet" href="styles.css?v=20260713-4" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -77,14 +77,23 @@
         </figure>
 
         <figure class="paper-figure paper-figure--main" id="motivation">
-          <div class="figure-image-wrap">
-            <img
-              class="paper-figure-image"
-              src="assets/images/motivation.png?v=20260713-2"
-              alt="Three-panel motivation figure comparing existing approaches, the cross-embodiment challenge, and an explicit morphology-aware robot control paradigm."
-            />
+          <div class="figure-pdf-wrap">
+            <object
+              class="paper-figure-pdf"
+              data="assets/figures/fig1.pdf?v=20260713-1#page=1&amp;view=FitH&amp;toolbar=0&amp;navpanes=0"
+              type="application/pdf"
+              aria-label="PRAXIS motivation figure PDF"
+            >
+              <div class="pdf-fallback">
+                <p>This browser cannot display the embedded PDF.</p>
+                <a href="assets/figures/fig1.pdf" target="_blank" rel="noopener">Open the original PDF</a>
+              </div>
+            </object>
           </div>
-          <figcaption><b>Figure 1.</b> Motivation: moving from implicit morphology modeling toward explicit structural priors for feasible cross-embodiment deployment.</figcaption>
+          <figcaption>
+            <span><b>Figure 1.</b> Motivation: moving from embodiment-blind policies toward description-only zero-shot transfer across graded embodiment shifts.</span>
+            <a class="figure-source-link" href="assets/figures/fig1.pdf" target="_blank" rel="noopener">Open original PDF</a>
+          </figcaption>
         </figure>
       </section>
 
