@@ -191,6 +191,24 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 .praxis-authors a { position: relative; }
 .praxis-authors a:not(:last-child)::after { content: "/"; position: absolute; right: -18px; color: #b2bbc4; font-weight: 400; }
 
+.project-overview { padding-bottom: 88px; }
+.teaser-video-figure { margin: 0; }
+.teaser-video-frame {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  border: 1px solid #1c2937;
+  border-radius: 18px;
+  background: #0d1620;
+  box-shadow: 0 28px 72px rgba(19, 34, 50, .16);
+}
+.teaser-video { width: 100%; max-height: 720px; display: block; object-fit: contain; background: #0d1620; }
+.teaser-video-figure figcaption { margin: 14px 6px 0; color: var(--muted); font-size: .76rem; line-height: 1.55; text-align: center; }
+.teaser-video-figure figcaption b { color: var(--ink); }
+.paper-figure--main { margin-top: 54px; }
+
 .abstract-section { padding-top: 92px; }
 .abstract-layout { display: grid; grid-template-columns: minmax(0, 1fr) 235px; gap: 48px; align-items: start; margin-top: 30px; }
 .abstract-body {
@@ -268,6 +286,9 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   .praxis-title .project-title { font-size: clamp(2.45rem, 11vw, 3.55rem); line-height: 1.04; }
   .praxis-authors { margin-top: 35px; gap: 9px 22px; }
   .praxis-authors a:not(:last-child)::after { right: -14px; }
+  .project-overview { padding-bottom: 64px; }
+  .teaser-video-frame { min-height: 180px; border-radius: 12px; }
+  .paper-figure--main { margin-top: 38px; }
   .abstract-body { text-align: left; }
   .abstract-highlights { grid-template-columns: 1fr; }
   .abstract-highlights article { border-right: 0; border-bottom: 1px solid var(--line); }
