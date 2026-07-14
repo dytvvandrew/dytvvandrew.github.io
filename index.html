@@ -8,12 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260714-2" />
+    <link rel="stylesheet" href="styles.css?v=20260714-3" />
   </head>
   <body>
     <header class="site-header" id="top">
       <div class="nav-shell">
-        <a class="wordmark" href="#top" aria-label="Back to homepage">PRAXIS<span>/</span>LAB</a>
+        <a class="wordmark brand-link" href="#top" aria-label="EmbodiX - back to homepage">
+          <span class="brand-logo brand-logo--nav">
+            <img src="assets/images/embodix-tag.png?v=20260714-1" width="1536" height="1024" alt="EmbodiX" />
+          </span>
+        </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
           <span></span><span></span><span class="sr-only">Open navigation</span>
         </button>
@@ -32,22 +36,11 @@
       <section class="hero praxis-hero section-shell">
         <div class="eyebrow"><span></span> Embodied Intelligence / Research Project</div>
         <h1 class="praxis-title">
-          <span class="project-name">PRAXIS</span>
+          <span class="brand-logo brand-logo--hero" aria-label="EmbodiX">
+            <img src="assets/images/embodix-tag.png?v=20260714-1" width="1536" height="1024" alt="" aria-hidden="true" />
+          </span>
           <span class="project-title">Bridging cognitive reasoning and kinematic execution with a physics-internalizing framework for description-only robot control</span>
         </h1>
-
-        <div class="method-signature" aria-label="Method: EmbodiX">
-          <span class="method-signature-label">Method</span>
-          <span class="method-tag-logo">
-            <img
-              src="assets/images/embodix-tag.png?v=20260714-1"
-              width="1536"
-              height="1024"
-              alt="EmbodiX"
-              decoding="async"
-            />
-          </span>
-        </div>
 
         <div class="authors praxis-authors" aria-label="Author list">
           <a href="#">Yunpeng Wang</a>
@@ -198,7 +191,11 @@
 
     <footer>
       <div class="section-shell footer-inner">
-        <a class="wordmark wordmark--footer" href="#top">PRAXIS<span>/</span>LAB</a>
+        <a class="wordmark wordmark--footer brand-link" href="#top" aria-label="EmbodiX - back to top">
+          <span class="brand-logo brand-logo--footer">
+            <img src="assets/images/embodix-tag.png?v=20260714-1" width="1536" height="1024" alt="EmbodiX" />
+          </span>
+        </a>
         <p>Physics-aware robot intelligence / <span id="year"></span></p>
         <a href="#top">Back to top ^</a>
       </div>
@@ -206,4 +203,3 @@
     <script src="script.js?v=20260714-1"></script>
   </body>
 </html>
-
