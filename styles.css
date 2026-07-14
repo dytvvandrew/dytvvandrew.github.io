@@ -167,19 +167,6 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 /* PRAXIS paper page */
 .praxis-hero { max-width: 1180px; padding-top: 112px; padding-bottom: 96px; }
 .praxis-title { max-width: 1160px; line-height: 1.02; }
-.praxis-title .project-name {
-  display: inline-block;
-  margin-bottom: 22px;
-  padding: 8px 14px 7px;
-  color: #fff;
-  background: var(--accent);
-  border-radius: 6px;
-  font-family: Inter, sans-serif;
-  font-size: clamp(.9rem, 1.6vw, 1.18rem);
-  font-weight: 800;
-  letter-spacing: .16em;
-  line-height: 1;
-}
 .praxis-title .project-title {
   display: block;
   font-family: Newsreader, Georgia, serif;
@@ -187,38 +174,15 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   font-weight: 500;
   letter-spacing: -.045em;
 }
-.method-signature {
-  width: fit-content;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 32px auto 0;
-  padding: 8px 14px 8px 9px;
-  border: 1px solid #d9e3ee;
-  border-radius: 999px;
-  background: rgba(255,255,255,.96);
-  box-shadow: 0 12px 34px rgba(25, 49, 80, .09);
-}
-.method-signature-label {
-  padding: 7px 10px;
-  color: #fff;
-  background: linear-gradient(135deg, #1846d5, #17aee8);
-  border-radius: 999px;
-  font-size: .63rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.method-tag-logo {
+.brand-link { display: block; line-height: 0; }
+.brand-logo {
   position: relative;
-  width: clamp(185px, 25vw, 270px);
   aspect-ratio: 1313 / 378;
   display: block;
   overflow: hidden;
+  background: #fff;
 }
-.method-tag-logo img {
+.brand-logo img {
   position: absolute;
   width: 117%;
   max-width: none;
@@ -228,7 +192,9 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   display: block;
   mix-blend-mode: multiply;
 }
-.method-signature + .praxis-authors { margin-top: 28px; }
+.brand-logo--nav { width: 126px; }
+.brand-logo--hero { width: clamp(230px, 25vw, 310px); margin: 0 auto 25px; }
+.brand-logo--footer { width: 142px; border-radius: 7px; }
 .praxis-authors { max-width: 900px; margin: 48px auto 0; align-items: baseline; gap: 10px 28px; font-size: 1rem; }
 .praxis-authors a { position: relative; display: inline-flex; align-items: baseline; }
 .praxis-authors sup { position: relative; top: -.45em; margin-left: 2px; font-size: .68em; line-height: 1; vertical-align: baseline; }
@@ -324,8 +290,8 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 @media (max-width: 620px) {
   .praxis-hero { padding-top: 72px; padding-bottom: 72px; }
   .praxis-title .project-title { font-size: clamp(2.45rem, 11vw, 3.55rem); line-height: 1.04; }
-  .method-signature { gap: 9px; margin-top: 26px; padding-right: 11px; }
-  .method-tag-logo { width: clamp(165px, 54vw, 220px); }
+  .brand-logo--nav { width: 108px; }
+  .brand-logo--hero { width: clamp(210px, 66vw, 270px); margin-bottom: 20px; }
   .praxis-authors { margin-top: 35px; gap: 9px 22px; }
   .praxis-authors a:not(:last-child)::after { right: -14px; }
   .project-overview { padding-bottom: 64px; }
@@ -344,4 +310,3 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   .framework-placeholder i { width: 1px; height: 30px; }
   .framework-placeholder i::after { right: -3px; top: auto; bottom: -1px; border-width: 6px 3px 0; border-color: #99aec2 transparent transparent; }
 }
-
