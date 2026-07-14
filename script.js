@@ -31,7 +31,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const DEFAULT_DEMO_PLAYBACK_RATE = 1.5;
 const demoGallery = document.querySelector('[data-demo-gallery]');
-const speedChip = document.querySelector('.speed-chip');
 
 function configureDemoVideo(video, playbackRate) {
   const applyRate = () => {
@@ -61,7 +60,7 @@ function observeDemoVideos(demoVideos) {
   demoVideos.forEach((video) => demoObserver.observe(video));
 }
 
-function createDemoCard(item, index, playbackRate) {
+function createDemoCard(item, index) {
   const card = document.createElement('article');
   card.className = 'demo-card';
 
@@ -79,10 +78,6 @@ function createDemoCard(item, index, playbackRate) {
   video.setAttribute('aria-label', item.title || `Demo ${index + 1}`);
   if (item.poster) video.poster = item.poster;
 
-  const speedBadge = document.createElement('span');
-  speedBadge.className = 'demo-speed-badge';
-  speedBadge.textContent = `${playbackRate}x`;
-
   const meta = document.createElement('div');
   meta.className = 'demo-meta';
 
@@ -93,7 +88,7 @@ function createDemoCard(item, index, playbackRate) {
   title.textContent = item.title || item.description || 'Robot demonstration';
 
   meta.append(label, title);
-  videoShell.append(video, speedBadge);
+  videoShell.append(video);
   card.append(videoShell, meta);
   return card;
 }
@@ -120,13 +115,8 @@ async function initializeDemoGallery() {
     // Keep the static placeholder cards when the manifest is unavailable.
   }
 
-  if (speedChip) {
-    speedChip.textContent = `${playbackRate}x playback`;
-    speedChip.setAttribute('aria-label', `All demos play at ${playbackRate} times speed`);
-  }
-
   if (items.length) {
-    demoGallery.replaceChildren(...items.map((item, index) => createDemoCard(item, index, playbackRate)));
+    demoGallery.replaceChildren(...items.map((item, index) => createDemoCard(item, index)));
   }
 
   const demoVideos = Array.from(demoGallery.querySelectorAll('.demo-video'));
