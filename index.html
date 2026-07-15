@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260715-2" />
+    <link rel="stylesheet" href="styles.css?v=20260715-3" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -93,7 +93,15 @@
               alt="Motivation figure showing the limitations of embodiment-blind policies, description-only zero-shot transfer performance, the EmbodiX paradigm, and generalization across graded embodiment shifts."
             />
           </div>
-          <figcaption><b>Figure 1.</b> Motivation: moving from embodiment-blind policies toward description-only zero-shot transfer across graded embodiment shifts.</figcaption>
+          <figcaption class="figure-caption--detailed">
+            <p class="caption-lead"><b>Figure 1. Overview of EmbodiX and description-only cross-embodiment transfer.</b></p>
+            <div class="caption-parts">
+              <p><b>a,</b> Limitations of embodiment-blind policies. A policy trained on one body does not directly specify action on structurally different target robots, morphology-blind action generation omits body constraints and coarse body descriptions do not expose the information required for control.</p>
+              <p><b>b,</b> Description-only transfer across target-body data scales (left), seen and held-out morphology settings (top right), and desktop and mobile manipulation (bottom right). Curves show EmbodiX and its matched baseline; the radar plot compares no body input, RobotID, hand-crafted morphology statistics, graph topology and EmbodiX; bars show matched gains.</p>
+              <p><b>c,</b> EmbodiX learning paradigm. EmbodiVerse-110K supplies body variants for morphology learning and source-body task episodes train the VLA or world–action model. Learned body–action knowledge routes shared task intent through Morphology Space and retargets it into robot-native action.</p>
+              <p><b>d,</b> Representative generalisation settings, including held-out manipulator models and cross-category transfer to dexterous hands, humanoids and bimanual robots.</p>
+            </div>
+          </figcaption>
         </figure>
       </section>
 
@@ -133,7 +141,10 @@
                 alt="EmbodiX framework diagram showing morphology input, structural encoding, morphology routing, capability parsing, and action retargeting."
               />
             </div>
-            <figcaption><b>Figure 2.</b> EmbodiX framework for embodiment-aware policy learning.</figcaption>
+            <figcaption class="figure-caption--detailed">
+              <p class="caption-lead"><b>Figure 2. EmbodiX framework for morphology-aware policy learning.</b></p>
+              <p>Framework overview. Standard robot descriptions and current state are converted into a typed morphology graph. Node, edge and global encoders followed by GraphGPS blocks produce node, chain and global body tokens. Morphology routing connects task representations to relevant chains; capability parsing and action retargeting then map body-agnostic intent actions to robot-native commands under observation and state feedback.</p>
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -187,7 +198,10 @@
                 alt="Bar charts comparing action-head success rates with and without structural encoding across full fine-tuning, few-shot, and zero-shot adaptation regimes."
               />
             </div>
-            <figcaption><b>Figure 3.</b> Action-head gains across adaptation regimes under full fine-tuning, few-shot, and zero-shot settings.</figcaption>
+            <figcaption class="figure-caption--detailed">
+              <p class="caption-lead"><b>Figure 3. Structural conditioning improves cross-embodiment transfer across adaptation regimes.</b></p>
+              <p>Cross-action-head gains under different amounts of adaptation data. The comparison covers fine-tuning, few-shot and zero-shot regimes (FT-100, FT-50, FS-20, FS-10, and ZS-0 represent the number of training demos used for the task, which are 100, 50, 20, 10, and 0 respectively) across FAST, OFT, <span class="math">&pi;</span> and GR00T action heads. StrucENC provides consistent gains over the baseline, with the largest improvements emerging when adaptation data is scarce.</p>
+            </figcaption>
           </figure>
 
           <figure class="paper-figure">
@@ -202,7 +216,10 @@
                 alt="Radar and gain plots showing task-level capability envelopes under scarce adaptation data across Cosmos-P2, Wan2.2, pi, and GR00T settings."
               />
             </div>
-            <figcaption><b>Figure 4.</b> Task-level capability envelopes under scarce adaptation data across models and adaptation regimes.</figcaption>
+            <figcaption class="figure-caption--detailed">
+              <p class="caption-lead"><b>Figure 4. EmbodiX improves low-data, perturbed and cross-morphology robot transfer.</b></p>
+              <p>Task-level capability envelopes under scarce adaptation data. Radar plots show the task-wise success profile across ten tabletop manipulation tasks, and dumbbell plots show the corresponding task-level gains from baseline to StrucENC-enabled policies under few-shot and zero-shot regimes.</p>
+            </figcaption>
           </figure>
         </div>
       </section>
