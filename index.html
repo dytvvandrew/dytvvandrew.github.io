@@ -173,12 +173,37 @@
         <div class="section-content">
           <p class="section-kicker">Evaluation</p>
           <h2>Experimental Results</h2>
-          <p class="section-intro">Key quantitative and qualitative comparisons can be inserted into the cards below.</p>
-          <div class="result-grid praxis-results">
-            <article class="result-card result-card--wide"><div class="visual-placeholder"><span>Main result figure</span></div><h3>Cross-embodiment transfer</h3><p>Primary comparison figure and caption placeholder.</p></article>
-            <article class="result-card"><div class="result-stat"><strong>44.8%</strong><span>Zero-shot success</span></div><h3>6-to-7 DoF transfer</h3><p>Compared with 8.1% for structure-free baselines.</p></article>
-            <article class="result-card"><div class="result-stat"><strong>81.5%</strong><span>LIBERO-Plus</span></div><h3>Optimal configuration</h3><p>Success rate on the LIBERO-Plus benchmark.</p></article>
-          </div>
+          <p class="section-intro">Quantitative evaluation across adaptation regimes, action heads, models, and task-level capabilities.</p>
+
+          <figure class="paper-figure">
+            <div class="figure-image-wrap">
+              <img
+                class="paper-figure-image"
+                src="assets/images/results-action-head.png?v=20260715-1"
+                width="2370"
+                height="1328"
+                loading="lazy"
+                decoding="async"
+                alt="Bar charts comparing action-head success rates with and without structural encoding across full fine-tuning, few-shot, and zero-shot adaptation regimes."
+              />
+            </div>
+            <figcaption><b>Figure 3.</b> Action-head gains across adaptation regimes under full fine-tuning, few-shot, and zero-shot settings.</figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <div class="figure-image-wrap">
+              <img
+                class="paper-figure-image"
+                src="assets/images/results-capability-envelope.png?v=20260715-1"
+                width="2301"
+                height="1206"
+                loading="lazy"
+                decoding="async"
+                alt="Radar and gain plots showing task-level capability envelopes under scarce adaptation data across Cosmos-P2, Wan2.2, pi, and GR00T settings."
+              />
+            </div>
+            <figcaption><b>Figure 4.</b> Task-level capability envelopes under scarce adaptation data across models and adaptation regimes.</figcaption>
+          </figure>
         </div>
       </section>
 
