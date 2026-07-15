@@ -2,35 +2,34 @@
   "playbackRate": 1.5,
   "items": [
     {
-      "src": "assets/video/01.mp4",
+      "src": "assets/gifs/real-demos/01.gif",
       "label": "Demo 01",
       "title": "Put the toy in the plate"
     },
     {
-      "src": "assets/video/02.mp4",
+      "src": "assets/gifs/real-demos/02.gif",
       "label": "Demo 02",
       "title": "Press buttons"
     },
     {
-      "src": "assets/video/03.mp4",
+      "src": "assets/gifs/real-demos/03.gif",
       "label": "Demo 03",
       "title": "Put the toy into the garbage bin"
     },
     {
-      "src": "assets/video/04.mp4",
+      "src": "assets/gifs/real-demos/04.gif",
       "label": "Demo 04",
       "title": "Grab the toy and put it in the plate"
     },
     {
-      "src": "assets/video/05.mp4",
+      "src": "assets/gifs/real-demos/05.gif",
       "label": "Demo 05",
       "title": "Use the finger to press buttons"
     },
     {
-      "src": "assets/video/06.mp4",
+      "src": "assets/gifs/real-demos/06.gif",
       "label": "Demo 06",
       "title": "Grab the toy and put it in the bin"
     }
   ]
 }
-

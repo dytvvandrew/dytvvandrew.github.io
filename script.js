@@ -68,16 +68,28 @@ function createDemoCard(item, index) {
   const videoShell = document.createElement('div');
   videoShell.className = 'demo-video-shell';
 
-  const video = document.createElement('video');
-  video.className = 'demo-video';
-  video.src = item.src;
-  video.muted = true;
-  video.loop = true;
-  video.controls = true;
-  video.playsInline = true;
-  video.preload = 'metadata';
-  video.setAttribute('aria-label', item.title || `Demo ${index + 1}`);
-  if (item.poster) video.poster = item.poster;
+  const isGif = /\.gif(?:$|[?#])/i.test(item.src);
+  let media;
+
+  if (isGif) {
+    media = document.createElement('img');
+    media.className = 'demo-gif';
+    media.src = item.src;
+    media.alt = item.title || `Demo ${index + 1}`;
+    media.loading = 'lazy';
+    media.decoding = 'async';
+  } else {
+    media = document.createElement('video');
+    media.className = 'demo-video';
+    media.src = item.src;
+    media.muted = true;
+    media.loop = true;
+    media.controls = true;
+    media.playsInline = true;
+    media.preload = 'metadata';
+    media.setAttribute('aria-label', item.title || `Demo ${index + 1}`);
+    if (item.poster) media.poster = item.poster;
+  }
 
   const meta = document.createElement('div');
   meta.className = 'demo-meta';
@@ -89,7 +101,7 @@ function createDemoCard(item, index) {
   title.textContent = item.title || item.description || 'Robot demonstration';
 
   meta.append(label, title);
-  videoShell.append(video);
+  videoShell.append(media);
   card.append(videoShell, meta);
   return card;
 }
@@ -120,7 +132,7 @@ async function initializeDemoGallery() {
     demoGallery.replaceChildren(...items.map((item, index) => createDemoCard(item, index)));
   }
 
-  const demoVideos = Array.from(demoGallery.querySelectorAll('.demo-video'));
+  const demoVideos = Array.from(demoGallery.querySelectorAll('video.demo-video'));
   demoVideos.forEach((video) => configureDemoVideo(video, playbackRate));
   observeDemoVideos(demoVideos);
 }
