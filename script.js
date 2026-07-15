@@ -31,6 +31,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const DEFAULT_DEMO_PLAYBACK_RATE = 1.5;
 const demoGallery = document.querySelector('[data-demo-gallery]');
+const simulationGallery = document.querySelector('[data-simulation-gallery]');
 
 function configureDemoVideo(video, playbackRate) {
   const applyRate = () => {
@@ -126,3 +127,90 @@ async function initializeDemoGallery() {
 
 initializeDemoGallery();
 
+function createSimulationVideo(src, viewLabel, robotLabel) {
+  const shell = document.createElement('div');
+  shell.className = 'simulation-view';
+  shell.dataset.viewLabel = viewLabel;
+
+  const video = document.createElement('video');
+  video.className = 'simulation-video';
+  video.dataset.src = src;
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = 'none';
+  video.setAttribute('aria-label', `${robotLabel} ${viewLabel}`);
+
+  shell.append(video);
+  return shell;
+}
+
+function createSimulationCard(item) {
+  const card = document.createElement('article');
+  card.className = 'simulation-card';
+
+  const label = document.createElement('div');
+  label.className = 'simulation-card-label';
+  label.textContent = item.label;
+
+  const views = document.createElement('div');
+  views.className = 'simulation-views';
+  views.append(
+    createSimulationVideo(item.record, 'Record view', item.label),
+    createSimulationVideo(item.teleop, 'Teleop view', item.label),
+  );
+
+  card.append(label, views);
+  return card;
+}
+
+function loadSimulationVideo(video) {
+  if (video.src || !video.dataset.src) return;
+  video.src = video.dataset.src;
+  video.load();
+}
+
+function observeSimulationVideos(videos) {
+  if (!('IntersectionObserver' in window)) {
+    videos.forEach((video) => {
+      loadSimulationVideo(video);
+      video.play().catch(() => {});
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        loadSimulationVideo(video);
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { rootMargin: '280px 0px', threshold: 0.05 });
+
+  videos.forEach((video) => observer.observe(video));
+}
+
+async function initializeSimulationGallery() {
+  if (!simulationGallery) return;
+
+  try {
+    const response = await fetch('assets/simulation-demos.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Simulation manifest unavailable');
+    const manifest = await response.json();
+    const items = Array.isArray(manifest.items)
+      ? manifest.items.filter((item) => item?.label && item?.record && item?.teleop)
+      : [];
+
+    if (!items.length) throw new Error('Simulation manifest is empty');
+    simulationGallery.replaceChildren(...items.map(createSimulationCard));
+    observeSimulationVideos(Array.from(simulationGallery.querySelectorAll('.simulation-video')));
+  } catch {
+    simulationGallery.innerHTML = '<p class="simulation-loading">Simulation demos are temporarily unavailable.</p>';
+  }
+}
+
+initializeSimulationGallery();
