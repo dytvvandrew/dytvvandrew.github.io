@@ -139,90 +139,104 @@ async function initializeDemoGallery() {
 
 initializeDemoGallery();
 
-function createSimulationVideo(src, viewLabel, robotLabel) {
-  const shell = document.createElement('div');
-  shell.className = 'simulation-view';
-  shell.dataset.viewLabel = viewLabel;
+function createSimulationFamily(family, manifest, grippersById) {
+  const section = document.createElement('section');
+  section.className = 'simulation-family';
 
-  const video = document.createElement('video');
-  video.className = 'simulation-video';
-  video.dataset.src = src;
-  video.muted = true;
-  video.loop = true;
-  video.playsInline = true;
-  video.preload = 'none';
-  video.setAttribute('aria-label', `${robotLabel} ${viewLabel}`);
+  const header = document.createElement('header');
+  header.className = 'simulation-family-header';
 
-  shell.append(video);
-  return shell;
-}
+  const kicker = document.createElement('p');
+  kicker.className = 'simulation-family-kicker';
+  kicker.textContent = family.kicker;
 
-function createSimulationCard(item) {
-  const card = document.createElement('article');
-  card.className = 'simulation-card';
+  const title = document.createElement('h4');
+  title.textContent = family.title;
 
-  const label = document.createElement('div');
-  label.className = 'simulation-card-label';
-  label.textContent = item.label;
+  const subtitle = document.createElement('p');
+  subtitle.textContent = family.subtitle;
+  header.append(kicker, title, subtitle);
 
-  const views = document.createElement('div');
-  views.className = 'simulation-views';
-  views.append(
-    createSimulationVideo(item.record, 'Record view', item.label),
-    createSimulationVideo(item.teleop, 'Teleop view', item.label),
-  );
+  const scroll = document.createElement('div');
+  scroll.className = 'simulation-matrix-scroll';
 
-  card.append(label, views);
-  return card;
-}
+  const matrix = document.createElement('div');
+  matrix.className = 'simulation-matrix';
+  matrix.style.setProperty('--arm-count', String(family.arms.length));
+  matrix.style.setProperty('--matrix-min-width', family.arms.length >= 4 ? '820px' : '650px');
+  matrix.setAttribute('role', 'table');
+  matrix.setAttribute('aria-label', `${family.name} arm and gripper matrix`);
 
-function loadSimulationVideo(video) {
-  if (video.src || !video.dataset.src) return;
-  video.src = video.dataset.src;
-  video.load();
-}
+  const corner = document.createElement('div');
+  corner.className = 'simulation-corner';
+  corner.textContent = 'Gripper variant';
+  matrix.append(corner);
 
-function observeSimulationVideos(videos) {
-  if (!('IntersectionObserver' in window)) {
-    videos.forEach((video) => {
-      loadSimulationVideo(video);
-      video.play().catch(() => {});
+  family.arms.forEach((arm) => {
+    const armLabel = document.createElement('div');
+    armLabel.className = 'simulation-arm-label';
+    armLabel.textContent = arm.label;
+    armLabel.setAttribute('role', 'columnheader');
+    matrix.append(armLabel);
+  });
+
+  family.grippers.forEach((gripperId) => {
+    const gripper = grippersById.get(gripperId);
+    if (!gripper) return;
+
+    const rowLabel = document.createElement('div');
+    rowLabel.className = 'simulation-gripper-label';
+    rowLabel.setAttribute('role', 'rowheader');
+
+    const gripperName = document.createElement('strong');
+    gripperName.textContent = gripper.label;
+
+    const gripperDescription = document.createElement('small');
+    gripperDescription.textContent = gripper.description;
+    rowLabel.append(gripperName, gripperDescription);
+    matrix.append(rowLabel);
+
+    family.arms.forEach((arm) => {
+      const figure = document.createElement('figure');
+      figure.className = 'simulation-cell';
+      figure.setAttribute('role', 'cell');
+
+      const image = document.createElement('img');
+      image.className = 'simulation-gif';
+      const suffix = gripperId === 'default' ? '' : `-${gripperId}`;
+      image.src = `${manifest.basePath}/${arm.id}${suffix}.gif?v=${manifest.version}`;
+      image.alt = `${arm.label} with ${gripper.label} performing StackCube`;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      figure.append(image);
+      matrix.append(figure);
     });
-    return;
-  }
+  });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        loadSimulationVideo(video);
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-      }
-    });
-  }, { rootMargin: '280px 0px', threshold: 0.05 });
-
-  videos.forEach((video) => observer.observe(video));
+  scroll.append(matrix);
+  section.append(header, scroll);
+  return section;
 }
 
 async function initializeSimulationGallery() {
   if (!simulationGallery) return;
 
   try {
-    const response = await fetch('assets/simulation-demos.json', { cache: 'no-store' });
+    const response = await fetch('assets/simulation-gifs.json', { cache: 'no-store' });
     if (!response.ok) throw new Error('Simulation manifest unavailable');
     const manifest = await response.json();
-    const items = Array.isArray(manifest.items)
-      ? manifest.items.filter((item) => item?.label && item?.record && item?.teleop)
-      : [];
+    const families = Array.isArray(manifest.families) ? manifest.families : [];
+    const grippers = Array.isArray(manifest.grippers) ? manifest.grippers : [];
+    if (!families.length || !grippers.length) throw new Error('Simulation manifest is empty');
 
-    if (!items.length) throw new Error('Simulation manifest is empty');
-    simulationGallery.replaceChildren(...items.map(createSimulationCard));
-    observeSimulationVideos(Array.from(simulationGallery.querySelectorAll('.simulation-video')));
+    const grippersById = new Map(grippers.map((gripper) => [gripper.id, gripper]));
+    simulationGallery.replaceChildren(
+      ...families.map((family) => createSimulationFamily(family, manifest, grippersById)),
+    );
   } catch {
     simulationGallery.innerHTML = '<p class="simulation-loading">Simulation demos are temporarily unavailable.</p>';
   }
 }
 
 initializeSimulationGallery();
+

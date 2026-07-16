@@ -1,0 +1,65 @@
+{
+  "task": "StackCube",
+  "version": "20260716-1",
+  "basePath": "assets/simulation-gifs/stackcube",
+  "grippers": [
+    { "id": "g1", "label": "2F-85", "description": "G1 · default" },
+    { "id": "g2", "label": "2F-140", "description": "G2 · long-reach" },
+    { "id": "g3", "label": "2F-C2", "description": "G3 · compact" },
+    { "id": "default", "label": "Default", "description": "Native gripper" }
+  ],
+  "families": [
+    {
+      "name": "UR family",
+      "kicker": "UR family",
+      "title": "UR StackCube demos span compact to long-reach bodies",
+      "subtitle": "4 arm models × 3 grippers · StackCube teleop-view demos",
+      "grippers": ["g1", "g2", "g3"],
+      "arms": [
+        { "id": "ur3e", "label": "UR3e" },
+        { "id": "ur5e", "label": "UR5e" },
+        { "id": "ur10e", "label": "UR10e" },
+        { "id": "ur16e", "label": "UR16e" }
+      ]
+    },
+    {
+      "name": "JAKA family",
+      "kicker": "JAKA family",
+      "title": "JAKA StackCube demos across arm reach and gripper variants",
+      "subtitle": "4 arm models × 3 grippers · StackCube teleop-view demos",
+      "grippers": ["g1", "g2", "g3"],
+      "arms": [
+        { "id": "jakazu3", "label": "JAKA ZU3" },
+        { "id": "jakazu5", "label": "JAKA ZU5" },
+        { "id": "jakazu7", "label": "JAKA ZU7" },
+        { "id": "jakazu12", "label": "JAKA ZU12" }
+      ]
+    },
+    {
+      "name": "RM family",
+      "kicker": "RM family",
+      "title": "RM StackCube demos across heterogeneous arm morphologies",
+      "subtitle": "4 arm models × 3 grippers · StackCube teleop-view demos",
+      "grippers": ["g1", "g2", "g3"],
+      "arms": [
+        { "id": "rm65", "label": "RM65" },
+        { "id": "rm75", "label": "RM75" },
+        { "id": "rml63ii", "label": "RML63II" },
+        { "id": "rx75l", "label": "RX75L" }
+      ]
+    },
+    {
+      "name": "Additional arms",
+      "kicker": "Additional embodiments",
+      "title": "Additional StackCube robot morphologies",
+      "subtitle": "3 robot models × native grippers · StackCube teleop-view demos",
+      "grippers": ["default"],
+      "arms": [
+        { "id": "franka", "label": "Franka" },
+        { "id": "nero", "label": "Nero" },
+        { "id": "piper", "label": "Piper" }
+      ]
+    }
+  ]
+}
+

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260715-3" />
+    <link rel="stylesheet" href="styles.css?v=20260716-1" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -168,11 +168,17 @@
 
           <section class="simulation-showcase" aria-labelledby="simulation-title">
             <div class="simulation-heading">
-              <p class="section-kicker">Cross-embodiment simulation</p>
-              <h3 id="simulation-title">StackCube across new models and grippers</h3>
-              <p>Each configuration is shown from two synchronized viewpoints. Videos load only when they approach the viewport.</p>
+              <div class="simulation-heading-copy">
+                <p class="section-kicker">StackCube teleop GIF matrix</p>
+                <h3 id="simulation-title">Robot morphology × gripper variants</h3>
+                <p>Mechanical-arm models define columns; gripper variants define rows.</p>
+              </div>
+              <div class="simulation-format-badge" aria-label="One-to-one crop animated GIF">
+                <strong>1:1 crop</strong>
+                <span>Animated GIF</span>
+              </div>
             </div>
-            <div class="simulation-grid" data-simulation-gallery aria-label="StackCube simulation demo gallery">
+            <div class="simulation-matrices" data-simulation-gallery aria-label="StackCube simulation GIF matrices">
               <p class="simulation-loading">Loading simulation demos...</p>
             </div>
           </section>
@@ -253,6 +259,7 @@
         <a href="#top">Back to top ^</a>
       </div>
     </footer>
-    <script src="script.js?v=20260715-2"></script>
+    <script src="script.js?v=20260716-1"></script>
   </body>
 </html>
+
