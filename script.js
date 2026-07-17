@@ -61,9 +61,9 @@ function observeDemoVideos(demoVideos) {
   demoVideos.forEach((video) => demoObserver.observe(video));
 }
 
-function createDemoCard(item, index) {
+function createDemoCard(item, task, index) {
   const card = document.createElement('article');
-  card.className = 'demo-card';
+  card.className = 'demo-card demo-card--task';
 
   const videoShell = document.createElement('div');
   videoShell.className = 'demo-video-shell';
@@ -75,7 +75,7 @@ function createDemoCard(item, index) {
     media = document.createElement('img');
     media.className = 'demo-gif';
     media.src = item.src;
-    media.alt = item.title || `Demo ${index + 1}`;
+    media.alt = item.alt || `${task.label}: ${task.prompt}, robot embodiment ${index + 1}`;
     media.loading = 'lazy';
     media.decoding = 'async';
   } else {
@@ -87,30 +87,44 @@ function createDemoCard(item, index) {
     media.controls = true;
     media.playsInline = true;
     media.preload = 'metadata';
-    media.setAttribute('aria-label', item.title || `Demo ${index + 1}`);
+    media.setAttribute('aria-label', item.alt || `${task.label}: ${task.prompt}, robot embodiment ${index + 1}`);
     if (item.poster) media.poster = item.poster;
   }
 
-  const meta = document.createElement('div');
-  meta.className = 'demo-meta';
+  videoShell.append(media);
+  card.append(videoShell);
+  return card;
+}
+
+function createDemoTask(task, index) {
+  const column = document.createElement('article');
+  column.className = 'demo-task';
+
+  const header = document.createElement('header');
+  header.className = 'demo-task-header';
 
   const label = document.createElement('span');
-  label.textContent = item.label || `Demo ${String(index + 1).padStart(2, '0')}`;
+  label.className = 'demo-task-label';
+  label.textContent = task.label || `Demo ${index + 1}`;
 
-  const title = document.createElement('p');
-  title.textContent = item.title || item.description || 'Robot demonstration';
+  const prompt = document.createElement('h3');
+  prompt.className = 'demo-task-prompt';
+  prompt.textContent = task.prompt || 'Robot manipulation task';
 
-  meta.append(label, title);
-  videoShell.append(media);
-  card.append(videoShell, meta);
-  return card;
+  const media = document.createElement('div');
+  media.className = 'demo-task-media';
+  media.append(...task.items.map((item, itemIndex) => createDemoCard(item, task, itemIndex)));
+
+  header.append(label, prompt);
+  column.append(header, media);
+  return column;
 }
 
 async function initializeDemoGallery() {
   if (!demoGallery) return;
 
   let playbackRate = DEFAULT_DEMO_PLAYBACK_RATE;
-  let items = [];
+  let tasks = [];
 
   try {
     const response = await fetch('assets/demos.json', { cache: 'no-store' });
@@ -120,16 +134,23 @@ async function initializeDemoGallery() {
       if (Number.isFinite(requestedRate) && requestedRate > 0) {
         playbackRate = requestedRate;
       }
-      if (Array.isArray(manifest.items)) {
-        items = manifest.items.filter((item) => item && typeof item.src === 'string' && item.src.trim());
+      if (Array.isArray(manifest.tasks)) {
+        tasks = manifest.tasks
+          .map((task) => ({
+            ...task,
+            items: Array.isArray(task?.items)
+              ? task.items.filter((item) => item && typeof item.src === 'string' && item.src.trim())
+              : [],
+          }))
+          .filter((task) => task.items.length);
       }
     }
   } catch {
     // Keep the static placeholder cards when the manifest is unavailable.
   }
 
-  if (items.length) {
-    demoGallery.replaceChildren(...items.map((item, index) => createDemoCard(item, index)));
+  if (tasks.length) {
+    demoGallery.replaceChildren(...tasks.map((task, index) => createDemoTask(task, index)));
   }
 
   const demoVideos = Array.from(demoGallery.querySelectorAll('video.demo-video'));

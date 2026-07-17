@@ -1,35 +1,48 @@
 {
   "playbackRate": 1.5,
-  "items": [
+  "tasks": [
     {
-      "src": "assets/gifs/real-demos/01.gif?v=20260715-2",
-      "label": "Demo 01",
-      "title": "Put the toy in the plate"
+      "label": "Demo 1",
+      "prompt": "Put the toy on the plate",
+      "items": [
+        {
+          "src": "assets/gifs/real-demos/01.gif?v=20260715-2",
+          "alt": "Robot arm putting the toy on the plate"
+        },
+        {
+          "src": "assets/gifs/real-demos/04.gif?v=20260715-2",
+          "alt": "Dexterous robot hand putting the toy on the plate"
+        }
+      ]
     },
     {
-      "src": "assets/gifs/real-demos/02.gif?v=20260715-2",
-      "label": "Demo 02",
-      "title": "Press buttons"
+      "label": "Demo 2",
+      "prompt": "Press the buttons",
+      "items": [
+        {
+          "src": "assets/gifs/real-demos/02.gif?v=20260715-2",
+          "alt": "Robot arm pressing the buttons"
+        },
+        {
+          "src": "assets/gifs/real-demos/05.gif?v=20260715-2",
+          "alt": "Dexterous robot hand pressing the buttons"
+        }
+      ]
     },
     {
-      "src": "assets/gifs/real-demos/03.gif?v=20260715-2",
-      "label": "Demo 03",
-      "title": "Put the toy into the garbage bin"
-    },
-    {
-      "src": "assets/gifs/real-demos/04.gif?v=20260715-2",
-      "label": "Demo 04",
-      "title": "Grab the toy and put it in the plate"
-    },
-    {
-      "src": "assets/gifs/real-demos/05.gif?v=20260715-2",
-      "label": "Demo 05",
-      "title": "Use the finger to press buttons"
-    },
-    {
-      "src": "assets/gifs/real-demos/06.gif?v=20260715-2",
-      "label": "Demo 06",
-      "title": "Grab the toy and put it in the bin"
+      "label": "Demo 3",
+      "prompt": "Put the toy into the bin",
+      "items": [
+        {
+          "src": "assets/gifs/real-demos/03.gif?v=20260715-2",
+          "alt": "Robot arm putting the toy into the bin"
+        },
+        {
+          "src": "assets/gifs/real-demos/06.gif?v=20260715-2",
+          "alt": "Dexterous robot hand putting the toy into the bin"
+        }
+      ]
     }
   ]
 }
+
