@@ -1,33 +1,45 @@
 {
-  "playbackRate": 1,
+  "playbackRate": 1.5,
   "tasks": [
     {
-      "label": "Task 1",
-      "prompt": "Placing a banana onto a plate",
+      "label": "Demo 1",
+      "prompt": "Put the toy on the plate",
       "items": [
         {
-          "src": "assets/video/few-shot-real-world/task1_four_model_comparison.mp4?v=20260718-1",
-          "alt": "Four-model comparison for placing a banana onto a plate"
+          "src": "assets/gifs/real-demos/01.gif?v=20260715-2",
+          "alt": "Robot arm putting the toy on the plate"
+        },
+        {
+          "src": "assets/gifs/real-demos/04.gif?v=20260715-2",
+          "alt": "Dexterous robot hand putting the toy on the plate"
         }
       ]
     },
     {
-      "label": "Task 2",
-      "prompt": "Stacking a red block on top of a yellow block",
+      "label": "Demo 2",
+      "prompt": "Press the buttons",
       "items": [
         {
-          "src": "assets/video/few-shot-real-world/task2_four_model_comparison.mp4?v=20260718-1",
-          "alt": "Four-model comparison for stacking a red block on top of a yellow block"
+          "src": "assets/gifs/real-demos/02.gif?v=20260715-2",
+          "alt": "Robot arm pressing the buttons"
+        },
+        {
+          "src": "assets/gifs/real-demos/05.gif?v=20260715-2",
+          "alt": "Dexterous robot hand pressing the buttons"
         }
       ]
     },
     {
-      "label": "Task 3",
-      "prompt": "Stacking cups",
+      "label": "Demo 3",
+      "prompt": "Put the toy into the bin",
       "items": [
         {
-          "src": "assets/video/few-shot-real-world/task3_four_model_comparison.mp4?v=20260718-1",
-          "alt": "Four-model comparison for stacking cups"
+          "src": "assets/gifs/real-demos/03.gif?v=20260715-2",
+          "alt": "Robot arm putting the toy into the bin"
+        },
+        {
+          "src": "assets/gifs/real-demos/06.gif?v=20260715-2",
+          "alt": "Dexterous robot hand putting the toy into the bin"
         }
       ]
     }
