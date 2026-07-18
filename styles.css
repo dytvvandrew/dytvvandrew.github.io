@@ -264,21 +264,19 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 
 .simulation-showcase {
   margin-top: 78px;
-  padding: 42px 38px 46px;
-  overflow: hidden;
+  padding: 0;
+  overflow: visible;
   color: var(--ink);
-  background: var(--page);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  box-shadow: 0 18px 52px rgba(31, 48, 66, .065);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
-.simulation-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 34px; margin-bottom: 45px; }
+.simulation-heading { display: block; margin-bottom: 45px; }
 .simulation-heading-copy { max-width: 720px; }
 .simulation-showcase .section-kicker { color: var(--accent); }
 .simulation-heading h3 { margin: 0; color: var(--ink); font-family: Inter, sans-serif; font-size: clamp(1.75rem, 3vw, 2.45rem); font-weight: 800; letter-spacing: -.035em; line-height: 1.12; }
 .simulation-heading-copy > p:last-child { margin: 13px 0 0; color: var(--muted); font-size: .84rem; line-height: 1.6; }
-.simulation-format-badge { min-width: 155px; display: grid; gap: 3px; padding: 16px 18px; color: var(--accent-dark); border: 1px solid #cbd9fa; border-radius: 11px; background: var(--blue-soft); font-size: .65rem; font-weight: 800; letter-spacing: .04em; text-align: center; text-transform: uppercase; }
-.simulation-format-badge strong { font-size: .75rem; }
 .simulation-matrices { display: grid; gap: 52px; }
 .simulation-loading { margin: 0; padding: 55px 20px; color: var(--muted); border: 1px dashed #b8c6d4; border-radius: 14px; text-align: center; }
 .simulation-family + .simulation-family { padding-top: 46px; border-top: 1px solid var(--line); }
@@ -290,8 +288,8 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 .simulation-matrix { --arm-count: 4; min-width: var(--matrix-min-width, 820px); display: grid; grid-template-columns: minmax(130px, .78fr) repeat(var(--arm-count), minmax(145px, 1fr)); gap: 10px 14px; align-items: stretch; }
 .simulation-corner { display: flex; align-items: end; padding: 0 5px 7px; color: var(--muted); font-size: .58rem; font-weight: 800; letter-spacing: .08em; line-height: 1.25; text-transform: uppercase; }
 .simulation-arm-label { display: grid; place-items: end center; min-height: 38px; padding: 0 7px 7px; color: var(--ink); font-size: .78rem; font-weight: 800; text-align: center; }
-.simulation-gripper-label { display: flex; flex-direction: column; justify-content: center; min-height: 100%; padding: 16px 18px; border: 1px solid var(--line); border-radius: 11px; background: #f6f8fb; }
-.simulation-gripper-label strong { color: var(--accent); font-size: 1.05rem; letter-spacing: .02em; }
+.simulation-gripper-label { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100%; padding: 0 7px; border: 0; border-radius: 0; background: transparent; text-align: center; }
+.simulation-gripper-label strong { color: var(--ink); font-size: .78rem; font-weight: 800; letter-spacing: 0; }
 .simulation-gripper-label small { margin-top: 7px; color: var(--muted); font-size: .6rem; line-height: 1.35; }
 .simulation-cell { position: relative; aspect-ratio: 1; margin: 0; overflow: hidden; border: 1px solid #cbd7e3; border-radius: 11px; background: #e5edf2; box-shadow: 0 8px 22px rgba(31, 48, 66, .06); }
 .simulation-gif { width: 100%; height: 100%; display: block; object-fit: cover; background: #e5edf2; }
@@ -351,9 +349,8 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   .demo-grid { grid-template-columns: 1fr; }
   .demo-heading-row { align-items: flex-start; flex-direction: column; gap: 18px; }
   .demo-task-header { min-height: 0; }
-  .simulation-showcase { margin-top: 60px; padding: 30px 22px 34px; border-radius: 15px; }
+  .simulation-showcase { margin-top: 60px; padding: 0; border-radius: 0; }
   .simulation-heading { align-items: stretch; flex-direction: column; gap: 22px; margin-bottom: 36px; }
-  .simulation-format-badge { width: 150px; min-width: 0; }
   .simulation-matrices { gap: 42px; }
   .simulation-family + .simulation-family { padding-top: 38px; }
   .caption-parts { grid-template-columns: 1fr; gap: 9px; }
