@@ -186,7 +186,7 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   aspect-ratio: 1313 / 378;
   display: block;
   overflow: hidden;
-  background: #fff;
+  background: transparent;
 }
 .brand-logo img {
   position: absolute;
@@ -196,7 +196,7 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   left: -10.13%;
   top: -82.01%;
   display: block;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 .brand-logo--nav { width: 126px; }
 .brand-logo--hero { width: clamp(230px, 25vw, 310px); margin: 0 auto 25px; }
@@ -403,8 +403,7 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
   box-shadow: 0 10px 28px rgba(49, 163, 218, .22);
 }
 .resource-button:hover { color: #03111b; background: linear-gradient(135deg, #8beaff, #7cb1ff); }
-.brand-logo--nav { border-radius: 7px; box-shadow: 0 6px 20px rgba(0, 8, 18, .25); }
-.brand-logo--hero { border-radius: 12px; box-shadow: 0 14px 34px rgba(0, 8, 18, .25); }
+.brand-logo--nav, .brand-logo--hero, .brand-logo--footer { border-radius: 0; box-shadow: none; }
 
 .teaser-video-frame {
   border-color: rgba(105, 190, 225, .28);
