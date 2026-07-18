@@ -171,8 +171,8 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 }
 
 /* PRAXIS paper page */
-.praxis-hero { width: min(calc(100% - 24px), 1360px); max-width: 1360px; padding-top: 112px; padding-bottom: 96px; }
-.praxis-title { max-width: 1320px; line-height: 1.02; }
+.praxis-hero { width: min(calc(100% - 16px), 1760px); max-width: 1760px; padding-top: 112px; padding-bottom: 96px; }
+.praxis-title { max-width: 1720px; line-height: 1.02; }
 .praxis-title .project-title {
   display: block;
   font-family: Newsreader, Georgia, serif;
