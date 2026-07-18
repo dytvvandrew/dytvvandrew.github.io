@@ -392,19 +392,6 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 .menu-toggle > span:not(.sr-only) { background: var(--ink); }
 
 .praxis-hero { position: relative; isolation: isolate; }
-.praxis-hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 34px -36px 22px;
-  border: 1px solid rgba(116, 199, 230, .17);
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(56, 187, 222, .15), transparent 31%),
-    radial-gradient(circle at 86% 70%, rgba(68, 105, 190, .15), transparent 32%),
-    linear-gradient(145deg, rgba(15, 46, 69, .82), rgba(7, 24, 39, .7));
-  box-shadow: 0 32px 90px rgba(0, 8, 18, .34), inset 0 1px 0 rgba(255, 255, 255, .025);
-}
 .eyebrow { color: var(--accent-dark); }
 .title-accent { color: #acbed0; }
 .hero-summary, .affiliations { color: var(--muted); }
@@ -518,7 +505,6 @@ footer {
     border-bottom-color: var(--line);
     box-shadow: 0 18px 36px rgba(0, 6, 14, .32);
   }
-  .praxis-hero::before { inset: 22px -8px 12px; border-radius: 22px; }
 }
 
 @media (max-width: 620px) {
