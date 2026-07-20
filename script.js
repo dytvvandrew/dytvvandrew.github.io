@@ -167,16 +167,9 @@ function createSimulationFamily(family, manifest, grippersById) {
   const header = document.createElement('header');
   header.className = 'simulation-family-header';
 
-  const kicker = document.createElement('p');
-  kicker.className = 'simulation-family-kicker';
-  kicker.textContent = family.kicker;
-
   const title = document.createElement('h4');
   title.textContent = family.title;
-
-  const subtitle = document.createElement('p');
-  subtitle.textContent = family.subtitle;
-  header.append(kicker, title, subtitle);
+  header.append(title);
 
   const scroll = document.createElement('div');
   scroll.className = 'simulation-matrix-scroll';
@@ -260,4 +253,3 @@ async function initializeSimulationGallery() {
 }
 
 initializeSimulationGallery();
-

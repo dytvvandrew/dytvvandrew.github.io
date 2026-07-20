@@ -245,6 +245,7 @@ footer { margin-top: 30px; color: #c5d0dc; background: var(--ink); }
 .demo-heading-row { display: flex; gap: 30px; align-items: flex-end; justify-content: space-between; margin: 24px 0 38px; }
 .demo-heading-row .section-intro { margin: 0; }
 .demo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.demo-grid--gallery { margin-top: 38px; }
 .demo-task { min-width: 0; }
 .demo-task-header { min-height: 76px; margin-bottom: 16px; padding: 0 4px; }
 .demo-task-label { display: block; color: var(--accent); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
